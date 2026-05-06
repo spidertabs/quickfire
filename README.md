@@ -3,7 +3,7 @@
 </p>
 
 # Quickfire Exam Portal App
-A powerful, hardened assessment extension of the **Quickfire Student App — UEMS-PHD-VV** system for **Kampala International University** students, meticulously designed for academic integrity and seamless submission management.
+A powerful, hardened assessment extension of the — UEMS-PHD-VV for **Kampala International University** students, meticulously designed for academic integrity and seamless submission management.
 
 ---
 
