@@ -159,7 +159,15 @@ lib/
 
 ## 📖 How to Use the Application
 
-### 1. Dashboard & Course Directory
+### 1. Login
+
+Enter your UEMS-PHD-VV credentials to access your personal exam portal. Authentication is required before any assessments or course content becomes visible.
+
+![Login Screen](assets/screenshots/login_screen.png)
+
+---
+
+### 2. Dashboard & Course Directory
 
 Upon logging in, you land on your primary dashboard.
 
@@ -171,7 +179,7 @@ Upon logging in, you land on your primary dashboard.
 
 ---
 
-### 2. Unified Tasks Hub
+### 3. Unified Tasks Hub
 
 Navigate to the **Tasks** tab to manage your assessments.
 
@@ -182,7 +190,7 @@ Navigate to the **Tasks** tab to manage your assessments.
 
 ---
 
-### 3. The Exam Environment
+### 4. The Exam Environment
 
 Starting an assessment activates **Persistent Kiosk Mode** for a distraction-free experience.
 
@@ -194,7 +202,7 @@ Starting an assessment activates **Persistent Kiosk Mode** for a distraction-fre
 
 ---
 
-### 4. Back-Button Interception
+### 5. Back-Button Interception
 
 The exam environment prevents accidental and unauthorized exits.
 
@@ -204,7 +212,7 @@ The exam environment prevents accidental and unauthorized exits.
 
 ---
 
-### 5. Security Lockdown
+### 6. Security Lockdown
 
 If the environment is bypassed (e.g., switching windows, minimizing, or exiting fullscreen):
 
