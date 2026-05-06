@@ -8,16 +8,105 @@ A powerful, hardened assessment extension of the **UEMS-PHD-VV** platform — bu
 
 ---
 
-## 🌟 Key Features
+## ✅ Functional Features
 
-- 🟢 **Premium Green Branding** — A polished, professional aesthetic aligned with the official KIU visual identity.
-- 📋 **Unified Tasks Hub** — A consolidated workspace for active assessments, in-progress tasks, and completed submission reviews — all in one place.
-- 🛡️ **Hardened Anti-Cheat (Linux)** — Multi-layer desktop lockdown including window focus tracking, minimize blocking, and persistent kiosk enforcement.
-- 🔍 **Privacy-First Preview** — Review submitted answers through a dedicated preview mode that hides all grading metrics (marks, percentages, and correct/wrong labels) to keep focus on content.
-- 🔒 **Resume Lockdown** — Any assessment resumed from a previous session is automatically locked, ensuring mandatory supervisor oversight before continuing.
-- ✅ **Multi-Platform Security** — Consistent lockdown protocols across Web, Android, iOS, and Linux Desktop.
-- 💾 **Robust Sync Engine** — Automatic background syncing with local caching ensures no progress is lost, even during network outages.
-- 📄 **Academic PDF Export** — Professional submission records with official KIU branding, formatted for printing and archival.
+These are the core capabilities the system performs — what the application *does*.
+
+### 🔐 Authentication & Access Control
+- Students log in via the UEMS-PHD-VV authentication system to access their personal exam portal.
+- Role-based access distinguishes between **Students**, **Lecturers**, and **Supervisors**, with each role having scoped permissions.
+- Supervisor verification is required to unlock any locked or resumed session using a secure 4-digit PIN *(Default: `8888`)*.
+
+### 📋 Assessment Management
+- Students can view all assigned assessments from the **Unified Tasks Hub**, categorized as active, in-progress, or completed.
+- Assessments can be started, paused (with lockdown), and resumed (with supervisor authorization).
+- Each assessment enforces a configurable countdown timer visible throughout the exam.
+
+### ✍️ Exam-Taking Engine
+- Students answer questions within a locked, distraction-free environment.
+- A **left sidebar** allows quick navigation between questions without losing the current state.
+- Answers are **auto-saved** continuously via a debounced background sync queue, preventing any data loss.
+
+### 💾 Offline & Sync Support
+- The application caches progress locally, allowing students to continue working during network outages.
+- Upon reconnection, the sync engine automatically pushes all pending responses to the Supabase backend.
+
+### 🔍 Submission Preview (Privacy Mode)
+- Completed assessments can be reviewed from the Tasks list using a dedicated **Answer Preview** mode.
+- This mode hides all grading metrics — marks, percentages, and correct/wrong labels — showing only the submitted content.
+
+### 📄 PDF Export
+- Students and administrators can export a submission as a professionally formatted PDF.
+- Exported reports carry official **KIU branding** and are suitable for printing and institutional archival.
+
+### 🔒 Lockdown & Security Enforcement
+- The application detects and responds to: window focus loss, minimization attempts, fullscreen exits, and back-button presses.
+- Any violation immediately triggers a **Security Lockdown** screen, halting the assessment until a supervisor unlocks it.
+- Lockdown state persists across app restarts — the session remains locked even if the application is closed and reopened.
+
+---
+
+## 🔧 Non-Functional Features
+
+These define *how well* the system performs — quality attributes, constraints, and system behaviour.
+
+### ⚡ Performance
+- Answers are synced via a **debounced queue** to minimize redundant network requests without sacrificing data safety.
+- The UI maintains smooth rendering under kiosk lockdown conditions, even on low-spec Linux desktops common in university labs.
+
+### 🛡️ Security
+- All backend data access is governed by **Supabase Row-Level Security (RLS)** — students can only read and write their own records.
+- The 4-digit supervisor PIN is a secondary access control layer that operates independently of the primary auth system.
+- The platform implements the **UEMS "Ironclad" Security Standard**, a multi-layer protocol covering kiosk mode, behavioral lockdown, and visual accountability.
+
+### 🔁 Reliability & Fault Tolerance
+- Local caching ensures that no exam progress is lost due to connectivity interruptions.
+- Lockdown state is persisted to local storage, surviving unexpected app terminations or device restarts.
+
+### 🌍 Cross-Platform Consistency
+- Security and lockdown protocols behave consistently across **Linux Desktop, Android, iOS, and Web** targets.
+- Platform-specific implementations are abstracted behind a unified `fullscreen.dart` bridge.
+
+### 🎨 Usability & Branding
+- The interface follows a **Premium Green Design System** (`theme.dart`) aligned with the official KIU visual identity.
+- All dialogs, overlays, and warnings use formal academic language appropriate for an examination context.
+- High-contrast **Security Lockdown** overlays are designed to be immediately visible to invigilators across a room.
+
+### 🔧 Maintainability
+- Business logic is cleanly separated into `services/`, `utils/`, and `screens/` layers for ease of maintenance and testing.
+- The PDF engine and sync queue are modular and independently replaceable without affecting the core exam flow.
+
+---
+
+## 🚀 Extended Features
+
+Planned and advanced capabilities that extend the platform beyond its core assessment function.
+
+### 📊 Analytics Dashboard *(Planned)*
+- Lecturers will be able to view per-student time-on-question metrics, submission patterns, and flagged security events from a dedicated analytics panel.
+- Aggregate cohort-level data will help identify questions with unusually high skip or error rates.
+
+### 🤖 AI-Assisted Integrity Flagging *(Planned)*
+- Machine learning models will analyze behavioral metadata (e.g., answer-change frequency, time gaps between responses) to flag statistically anomalous submissions for human review.
+- Flagged assessments will be routed to a supervisor review queue rather than being automatically penalized.
+
+### 📱 Push Notification System *(Planned)*
+- Students will receive push notifications for upcoming exam deadlines, newly assigned assessments, and grade releases.
+- Lecturers will be alerted when a student triggers a security lockdown during a live exam session.
+
+### 🌐 Multi-Institution Support *(Planned)*
+- The platform architecture will be extended to support multi-tenant deployments, allowing other universities to onboard under their own branding and UEMS configuration.
+- Each institution will have isolated data namespaces enforced at the database level via Supabase RLS policies.
+
+### 🗣️ Accessibility Enhancements *(Planned)*
+- Screen reader support (TalkBack / VoiceOver) will be introduced to make the exam environment accessible to students with visual impairments.
+- Font scaling and high-contrast theme variants will be configurable per-student without compromising the security lockdown posture.
+
+### 🖨️ Batch PDF Export *(Planned)*
+- Administrators will be able to generate bulk PDF reports for entire cohorts in a single operation, with a ZIP archive download for offline storage.
+
+### 🔑 Biometric Unlock *(Planned)*
+- As an alternative to the 4-digit PIN, fingerprint or face recognition will be supported on compatible devices for faster supervisor verification during busy exam sessions.
 
 ---
 
