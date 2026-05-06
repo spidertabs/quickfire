@@ -2,8 +2,8 @@
   <img src="assets/images/q_light.png" width="120" alt="Quickfire Logo" style="border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"/>
 </p>
 
-# Quickfire Student App — UEMS-PHD-VV
-A powerful, hardened assessment platform for **Kampala International University** students, meticulously designed for academic integrity and seamless submission management.
+# Quickfire Exam Portal App
+A powerful, hardened assessment extension of the **Quickfire Student App — UEMS-PHD-VV** system for **Kampala International University** students, meticulously designed for academic integrity and seamless submission management.
 
 ---
 
