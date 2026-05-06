@@ -137,7 +137,7 @@ class _AssessmentScreenState extends State<AssessmentScreen> with WidgetsBinding
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: Text('STAY & CONTINUE', style: TextStyle(color: AppTheme.primary)),
+            child: const Text('STAY & CONTINUE', style: TextStyle(color: AppTheme.primary)),
           ),
           ElevatedButton(
             onPressed: () => Navigator.of(context).pop(true),
@@ -677,7 +677,7 @@ class _AssessmentScreenState extends State<AssessmentScreen> with WidgetsBinding
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(Icons.lock_person_rounded, size: 84, color: AppTheme.error),
+              const Icon(Icons.lock_person_rounded, size: 84, color: AppTheme.error),
               const SizedBox(height: 32),
               Text(
                 'SECURITY LOCKDOWN',
