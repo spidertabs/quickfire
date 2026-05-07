@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace "com.spidertabs.quickfire"
+    namespace "com.spidertabs.quickfire_student"
     compileSdk flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -19,7 +19,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.spidertabs.quickfire"
+        applicationId "com.spidertabs.quickfire_student"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutter.versionCode
