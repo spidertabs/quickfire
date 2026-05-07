@@ -229,7 +229,31 @@ If the environment is bypassed (e.g., switching windows, minimizing, or exiting 
 - **Privacy Mode** — `showResults` is set to `false` by default for student previews, hiding all marks, scores, and fractional counts to keep focus on the submitted content.
 - **Lockdown Persistence** — Once triggered, a lockdown persists across app restarts until a supervisor provides the unlock code.
 
+## 🏗️ Building & Installation
+
+To generate installable production artifacts for the Quickfire Exam Portal, follow the instructions below for your target platform.
+
+### 1. Preparation & Assets
+Ensure all dependencies are installed and launcher icons are generated before building:
+```bash
+flutter pub get
+flutter pub run flutter_launcher_icons
+```
+
+### 2. Build Commands
+
+| Platform | Build Command | Output Path |
+|---|---|---|
+| **Android (APK)** | `flutter build apk --release` | `build/app/outputs/flutter-apk/app-release.apk` |
+| **Android (AAB)** | `flutter build appbundle --release` | `build/app/outputs/bundle/release/app-release.aab` |
+| **Linux Desktop** | `flutter build linux --release` | `build/linux/x64/release/bundle/` |
+| **Web Portal** | `flutter build web --release` | `build/web/` |
+
+> [!NOTE]
+> **Android Signing**: Currently, the project is configured to use the debug signing key for release builds. For official Google Play Store distribution, you will need to configure a production keystore in `android/key.properties`.
+
 ---
+
 
 <p align="center">
   <strong>Spider Tabs Ltd · UEMS-PHD-VV © 2026</strong><br/>
