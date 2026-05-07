@@ -228,7 +228,9 @@ class _HomeScreenState extends State<HomeScreen> {
   String _getRemainingTime(dynamic attempt, int? durationMinutes) {
     if (attempt == null ||
         attempt['started_at'] == null ||
-        durationMinutes == null) return '';
+        durationMinutes == null) {
+      return '';
+    }
     try {
       final startedAt = DateTime.parse(attempt['started_at']);
       final endAt = startedAt.add(Duration(minutes: durationMinutes));
