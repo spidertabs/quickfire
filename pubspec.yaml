@@ -1,0 +1,53 @@
+name: quickfire_student
+description: UEMS Quickfire Assessment App for Students
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.0
+  shared_preferences: ^2.2.2
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.0
+  percent_indicator: ^4.2.3
+  intl: ^0.19.0
+  cached_network_image: ^3.3.1
+  shimmer: ^3.0.0
+  lottie: ^3.1.0
+  url_launcher: ^6.2.6
+  printing: ^5.14.3
+  pdf: ^3.12.0
+  window_manager: ^0.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  windows:
+    generate: true
+    image_path: "assets/images/q_dark.png"
+  image_path: "assets/images/q_dark.png"
+  adaptive_icon_background: "#0F1117"
+  adaptive_icon_foreground: "assets/images/q_dark.png"
+  web:
+    generate: true
+    image_path: "assets/images/q_dark.png"
+    background_color: "#0F1117"
+    theme_color: "#16A34A"
