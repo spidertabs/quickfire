@@ -1,0 +1,6 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "flutter": true,
+        "./build/linux/x64/release/bundle/quickfire_student": true
+    }
+}
